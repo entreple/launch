@@ -3,1273 +3,1849 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Entreple Builder Pack – From Nobody to Brand</title>
     <meta
       name="description"
-      content="Builder Pack by Entreple – a complete, no‑fluff digital toolkit to launch a brand fast: name, logo, one‑page site, product packaging, content kit, social setup, posting schedule, and a 14‑day launch roadmap."
+      content="Launch a credible brand in days. The Entreple Builder Pack gives you a complete, no‑fluff system to go from idea to a polished presence and first sales infrastructure."
     />
-    <title>Entreple – Builder Pack: From Nobody to Brand</title>
-
-    <!-- Favicon & Logo -->
+    <meta
+      property="og:title"
+      content="Entreple Builder Pack – From Nobody to Brand"
+    />
+    <meta
+      property="og:description"
+      content="A complete, no‑fluff system to go from idea to polished presence and first sales infrastructure."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="assets/logo.png" />
     <link rel="icon" href="assets/logo.png" />
-
-    <!-- Font: Inter (fallbacks included) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800;900&display=swap"
       rel="stylesheet"
     />
-
     <style>
-      :root {
-        --bg: #080c15;
-        --bg-soft: #0b1020;
-        --card: rgba(255, 255, 255, 0.03);
-        --stroke: rgba(255, 255, 255, 0.08);
-        --muted: rgba(255, 255, 255, 0.7);
-        --muted-2: rgba(255, 255, 255, 0.48);
-        --primary: #4e76e4;
-        --primary-2: #3e67d6;
-        --glow: 0 0 0 1px rgba(78, 118, 228, 0.3),
-          0 8px 40px rgba(78, 118, 228, 0.25);
-        --radius-lg: 24px;
-        --radius-xl: 28px;
-        --radius-xxl: 32px;
-        --container: 1200px;
-      }
-      * {
-        box-sizing: border-box;
-      }
       html {
         scroll-behavior: smooth;
+      }
+      :root {
+        --bg: #080c15;
+        --bg-2: #0a1222;
+        --card: #0e1627;
+        --muted: #9db0ffcc;
+        --text: #eaf0ff;
+        --text-dim: #c6d2ffcc;
+        --brand: #4e76e4;
+        --brand-2: #345ad8;
+        --brand-3: #7fa0ff;
+        --ok: #36d399;
+        --warn: #f97316;
+        --danger: #ef4444;
+        --radius-2xl: 22px;
+        --shadow-1: 0 10px 30px rgba(0, 0, 0, 0.35),
+          0 2px 10px rgba(0, 0, 0, 0.25);
+        --shadow-2: 0 20px 60px rgba(0, 0, 0, 0.5),
+          0 8px 30px rgba(0, 0, 0, 0.35);
+      }
+
+      /* CSS Reset (modern, minimal) */
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        height: 100%;
       }
       body {
         margin: 0;
         background: var(--bg);
-        color: #fff;
-        font-family: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI,
-          Roboto, "Helvetica Neue", Arial, "Apple Color Emoji", "Segoe UI Emoji";
+        color: var(--text);
+        font-family: Inter, Poppins, system-ui, -apple-system, Segoe UI, Roboto,
+          Ubuntu, Cantarell, Noto Sans, Helvetica, Arial, "Apple Color Emoji",
+          "Segoe UI Emoji";
+        line-height: 1.6;
         -webkit-font-smoothing: antialiased;
-        -moz-osx-font-smoothing: grayscale;
-      }
-      ::selection {
-        background: rgba(78, 118, 228, 0.3);
-        color: #fff;
-      }
-
-      .container {
-        max-width: var(--container);
-        margin: 0 auto;
-        padding: 0 16px;
-      }
-      .section {
-        scroll-margin-top: 100px;
-      }
-      .text-muted {
-        color: var(--muted);
-      }
-      .text-muted-2 {
-        color: var(--muted-2);
-      }
-      .card {
-        background: var(--card);
-        border: 1px solid var(--stroke);
-        border-radius: var(--radius-xl);
-      }
-      .glass {
-        background: var(--card);
-        backdrop-filter: blur(10px) saturate(120%);
-        -webkit-backdrop-filter: blur(10px) saturate(120%);
-      }
-
-      /* Buttons */
-      .btn {
-        display: inline-flex;
-        align-items: center;
-        gap: 0.6rem;
-        font-weight: 700;
-        padding: 0.85rem 1.1rem;
-        border-radius: 18px;
-        text-decoration: none;
-        color: #fff;
-        border: 1px solid transparent;
-      }
-      .btn-primary {
-        background: linear-gradient(180deg, var(--primary), var(--primary-2));
-        box-shadow: var(--glow);
-      }
-      .btn-primary:hover {
-        filter: brightness(1.06);
-      }
-      .btn-ghost {
-        background: rgba(255, 255, 255, 0.04);
-        border-color: var(--stroke);
-      }
-      .btn-ghost:hover {
-        background: rgba(255, 255, 255, 0.08);
-      }
-
-      /* Header */
-      header {
-        position: sticky;
-        top: 0;
-        z-index: 40;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-        background: rgba(8, 12, 21, 0.55);
-        backdrop-filter: blur(12px) saturate(120%);
-        -webkit-backdrop-filter: blur(12px) saturate(120%);
-      }
-      .nav {
-        height: 64px;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-      }
-      .brand {
-        display: flex;
-        align-items: center;
-        gap: 12px;
-      }
-      .brand img {
-        width: 28px;
-        height: 28px;
-        border-radius: 8px;
-      }
-      .brand span {
-        font-weight: 700;
-        letter-spacing: 0.2px;
-      }
-      .links {
-        display: flex;
-        align-items: center;
-        gap: 28px;
-        font-size: 14px;
-      }
-      .links a {
-        color: var(--muted);
-        text-decoration: none;
-      }
-      .links a:hover {
-        color: #fff;
-      }
-
-      /* Hero */
-      #hero .grid {
-        display: grid;
-        grid-template-columns: 1fr;
-        gap: 40px;
-        padding: 56px 0;
-      }
-      #hero h1 {
-        font-size: 42px;
-        line-height: 1.08;
-        margin: 10px 0 0;
-        font-weight: 900;
-        letter-spacing: -0.5px;
-      }
-      #hero p {
-        margin: 14px 0 0;
-        font-size: 17px;
-      }
-      .pill {
-        display: inline-flex;
-        align-items: center;
-        gap: 8px;
-        padding: 8px 12px;
-        border-radius: 999px;
-        border: 1px solid rgba(255, 255, 255, 0.1);
-        background: rgba(255, 255, 255, 0.05);
-        color: var(--muted);
-        font-size: 12px;
-      }
-      .haze-1,
-      .haze-2 {
-        position: absolute;
-        border-radius: 9999px;
-        filter: blur(60px);
-      }
-      .haze-1 {
-        top: -96px;
-        right: -10%;
-        width: 300px;
-        height: 300px;
-        background: radial-gradient(
-          60% 60% at 50% 50%,
-          rgba(78, 118, 228, 0.6),
-          rgba(78, 118, 228, 0)
-        );
-      }
-      .haze-2 {
-        bottom: -96px;
-        left: -10%;
-        width: 300px;
-        height: 300px;
-        background: radial-gradient(
-          60% 60% at 50% 50%,
-          rgba(78, 118, 228, 0.4),
-          rgba(78, 118, 228, 0)
-        );
-      }
-
-      .grid-2 {
-        display: grid;
-        grid-template-columns: 1fr;
-        gap: 20px;
-      }
-
-      /* Inside / Features / Steps */
-      .grid-3 {
-        display: grid;
-        grid-template-columns: 1fr;
-        gap: 20px;
-      }
-      .inside-card {
-        padding: 20px;
-      }
-      .inside-card h3 {
-        margin: 6px 0 0;
-        font-size: 16px;
-      }
-      .feature {
-        padding: 24px;
-      }
-      .step {
-        padding: 24px;
-      }
-      .step .tag {
-        display: inline-flex;
-        align-items: center;
-        gap: 8px;
-        font-size: 12px;
-        color: var(--muted);
-        border: 1px solid var(--stroke);
-        background: rgba(255, 255, 255, 0.05);
-        padding: 6px 10px;
-        border-radius: 999px;
-      }
-
-      /* Pricing */
-      .pricing {
-        display: grid;
-        grid-template-columns: 1fr;
-        gap: 24px;
-        align-items: end;
-      }
-      .price-card {
-        padding: 24px;
-      }
-
-      /* FAQ */
-      details.card {
-        padding: 20px;
-      }
-      details summary {
-        cursor: pointer;
-        list-style: none;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 12px;
-      }
-
-      /* Footer */
-      footer {
-        border-top: 1px solid rgba(255, 255, 255, 0.1);
-        padding: 40px 0;
-      }
-
-      /* Bottom mobile bar */
-      .bottom-bar {
-        position: fixed;
-        left: 50%;
-        transform: translateX(-50%);
-        bottom: 10px;
-        z-index: 50;
-        display: none;
-      }
-      .bottom-inner {
-        display: flex;
-        align-items: center;
-        gap: 16px;
-        padding: 10px 12px;
-        border-radius: 18px;
-        border: 1px solid rgba(255, 255, 255, 0.1);
-      }
-      .bottom-link {
-        display: flex;
-        align-items: center;
-        gap: 8px;
-        padding: 8px 10px;
-        border-radius: 12px;
-        color: var(--muted);
-        text-decoration: none;
-      }
-      .bottom-link:hover {
-        background: rgba(255, 255, 255, 0.06);
-        color: #fff;
-      }
-
-      /* Desktop >= 768px */
-      @media (min-width: 768px) {
-        #hero .grid {
-          grid-template-columns: 1.1fr 0.9fr;
-          gap: 48px;
-          padding: 80px 0;
-        }
-        .grid-2 {
-          grid-template-columns: 1fr 1fr;
-        }
-        .grid-3 {
-          grid-template-columns: repeat(3, 1fr);
-        }
-        .pricing {
-          grid-template-columns: 1fr 1fr;
-        }
-        .links {
-          display: flex;
-        }
-        .right-cta {
-          display: flex;
-          gap: 12px;
-        }
-        .brand-wrap {
-          order: 0;
-          justify-content: flex-start;
-        }
-        .mobile-spacer {
-          width: auto;
-        }
-        .bottom-bar {
-          display: none;
-        }
-      }
-
-      /* Mobile < 768px */
-      @media (max-width: 767.98px) {
-        .links {
-          display: none;
-        }
-        .right-cta {
-          display: none;
-        }
-        .brand-wrap {
-          order: 2;
-          display: flex;
-          justify-content: center;
-          flex: 1;
-        }
-        .mobile-spacer {
-          order: 3;
-          width: 40px;
-        }
-        .bottom-bar {
-          display: block;
-        }
-      }
-
-      /* Utility */
-      .mb-0 {
-        margin-bottom: 0;
-      }
-      .mt-0 {
-        margin-top: 0;
-      }
-      .mt-1 {
-        margin-top: 4px;
-      }
-      .mt-2 {
-        margin-top: 8px;
-      }
-      .mt-3 {
-        margin-top: 12px;
-      }
-      .mt-4 {
-        margin-top: 16px;
-      }
-      .mt-5 {
-        margin-top: 20px;
-      }
-      .mt-6 {
-        margin-top: 24px;
-      }
-      .mt-8 {
-        margin-top: 32px;
-      }
-      .mb-6 {
-        margin-bottom: 24px;
-      }
-      .py-14 {
-        padding-top: 56px;
-        padding-bottom: 56px;
-      }
-      .py-20 {
-        padding-top: 80px;
-        padding-bottom: 80px;
-      }
-      .p-6 {
-        padding: 24px;
-      }
-      .rounded-xl {
-        border-radius: var(--radius-xl);
-      }
-      .rounded-xxl {
-        border-radius: var(--radius-xxl);
-      }
-      .inline-icon {
-        width: 18px;
-        height: 18px;
-        vertical-align: -3px;
-      }
-      /* Brand link color override */
-      a.brand,
-      .brand,
-      .brand:link,
-      .brand:visited {
-        color: #fff;
-        text-decoration: none;
-      }
-      .brand span {
-        color: #fff;
-      }
-
-      /* Prevent sideways scroll + responsive media */
-      body {
         overflow-x: hidden;
       }
-      img,
-      svg {
+      img {
         max-width: 100%;
-        height: auto;
+        display: block;
+      }
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+      button {
+        font: inherit;
       }
 
-      /* Inside (modern module layout) */
-      .inside-grid {
-        display: grid;
-        grid-template-columns: 1fr;
-        gap: 20px;
+      /* Layout */
+      .container {
+        width: min(1200px, 92vw);
+        margin-inline: auto;
       }
-      .module {
-        padding: 28px;
-        border-radius: var(--radius-xl);
-        border: 1px solid var(--stroke);
+      .grid {
+        display: grid;
+        gap: 24px;
+      }
+      .grid-2 {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .grid-3 {
+        grid-template-columns: repeat(3, 1fr);
+      }
+      .grid-4 {
+        grid-template-columns: repeat(4, 1fr);
+      }
+
+      /* Brand accents */
+      .text-gradient {
+        background: linear-gradient(92deg, var(--text), var(--brand-3));
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+      }
+      .brand {
+        color: var(--brand);
+      }
+      .muted {
+        color: var(--text-dim);
+      }
+
+      /* Card */
+      .card {
         background: linear-gradient(
           180deg,
           rgba(255, 255, 255, 0.04),
           rgba(255, 255, 255, 0.02)
         );
+        border: 1px solid rgba(255, 255, 255, 0.09);
+        backdrop-filter: saturate(140%) blur(6px);
+        border-radius: var(--radius-2xl);
+        box-shadow: var(--shadow-1);
       }
-      .module .num {
-        width: 36px;
-        height: 36px;
+      .glass {
+        background: linear-gradient(
+          180deg,
+          rgba(78, 118, 228, 0.12),
+          rgba(78, 118, 228, 0)
+        );
+        border: 1px solid rgba(78, 118, 228, 0.18);
+      }
+
+      /* Header */
+      .skip {
+        position: absolute;
+        left: -9999px;
+        top: auto;
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
+      }
+      .skip:focus {
+        left: 12px;
+        top: 12px;
+        width: auto;
+        height: auto;
+        padding: 10px 14px;
         border-radius: 10px;
-        background: rgba(78, 118, 228, 0.15);
+        background: #fff;
+        color: #000;
+        z-index: 9999;
+      }
+
+      header {
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        background: rgba(8, 12, 21, 0.7);
+        backdrop-filter: blur(10px);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+      }
+      .nav {
         display: flex;
         align-items: center;
-        justify-content: center;
+        justify-content: space-between;
+        padding: 14px 0;
+      }
+      .nav-logo {
+        display: flex;
+        gap: 12px;
+        align-items: center;
+      }
+      .nav-logo img {
+        width: 34px;
+        height: 34px;
+        border-radius: 8px;
+      }
+      .nav-logo span {
+        font-weight: 700;
+        letter-spacing: 0.3px;
+      }
+      .nav-links {
+        display: flex;
+        gap: 22px;
+      }
+      .nav-links a {
+        color: var(--text-dim);
+        font-weight: 500;
+        opacity: 0.9;
+      }
+      .nav-links a:hover,
+      .nav-links a[aria-current="page"] {
+        color: var(--text);
+      }
+      .cta {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        background: linear-gradient(180deg, var(--brand), var(--brand-2));
+        color: #fff;
+        padding: 9px 14px;
+        border-radius: 10px;
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        box-shadow: 0 10px 24px rgba(78, 118, 228, 0.35);
+        transition: 0.25s transform;
+        font-size: 14px;
+      }
+      .cta:hover {
+        transform: translateY(-1px);
+      }
+      .cta .price {
+        opacity: 0.85;
+        font-weight: 600;
+        font-size: 14px;
+      }
+
+      /* Hero */
+      .hero {
+        position: relative;
+        padding: 72px 0 36px;
+      }
+      .hero-grid {
+        display: grid;
+        grid-template-columns: 1.15fr 0.85fr;
+        gap: 40px;
+        align-items: center;
+      }
+      .eyebrow {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 8px 12px;
+        border-radius: 999px;
+        background: linear-gradient(180deg, #0c1426, #0b1223);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        color: var(--brand-3);
+        font-weight: 600;
+        letter-spacing: 0.3px;
+      }
+      h1 {
+        font-size: clamp(28px, 4.6vw, 54px);
+        line-height: 1.1;
+        margin: 16px 0 10px;
+      }
+      .lead {
+        font-size: clamp(16px, 2.2vw, 20px);
+        color: var(--text-dim);
+        max-width: 60ch;
+      }
+      .hero-ctas {
+        display: flex;
+        gap: 14px;
+        margin-top: 22px;
+        flex-wrap: wrap;
+      }
+      .btn-outline {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        padding: 12px 18px;
+        border-radius: 14px;
+        border: 1px solid rgba(255, 255, 255, 0.16);
+        background: transparent;
+        color: var(--text);
+        transition: 0.2s;
+      }
+      .btn-outline:hover {
+        border-color: rgba(255, 255, 255, 0.35);
+      }
+
+      /* Visual column */
+      .mock {
+        position: relative;
+        aspect-ratio: 4/3;
+        border-radius: 22px;
+        background: linear-gradient(180deg, #0b1324, #0a0f1c);
+        border: 1px solid rgba(255, 255, 255, 0.06);
+        overflow: hidden;
+        box-shadow: var(--shadow-2);
+      }
+      .orb {
+        position: absolute;
+        filter: blur(20px);
+        opacity: 0.5;
+      }
+      .orb.one {
+        width: 380px;
+        height: 380px;
+        background: radial-gradient(
+          closest-side,
+          rgba(78, 118, 228, 0.85),
+          transparent
+        );
+        left: -8%;
+        top: -10%;
+      }
+      .orb.two {
+        width: 420px;
+        height: 420px;
+        background: radial-gradient(
+          closest-side,
+          rgba(127, 160, 255, 0.9),
+          transparent
+        );
+        right: -15%;
+        bottom: -20%;
+      }
+      .mock-inner {
+        position: absolute;
+        inset: 0;
+        padding: 18px;
+      }
+      .mock .card {
+        position: absolute;
+        inset: auto 18px 18px 18px;
+        padding: 16px;
+      }
+      .ticker {
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        padding: 10px 0;
+        background: linear-gradient(
+          180deg,
+          rgba(255, 255, 255, 0.02),
+          rgba(255, 255, 255, 0.06)
+        );
+        border-top: 1px solid rgba(255, 255, 255, 0.08);
+        white-space: nowrap;
+        overflow: hidden;
+      }
+      .ticker span {
+        display: inline-block;
+        padding-inline: 28px;
+        color: var(--muted);
+        animation: ticker 30s linear infinite;
+      }
+      @keyframes ticker {
+        from {
+          transform: translateX(0);
+        }
+        to {
+          transform: translateX(-50%);
+        }
+      }
+
+      /* Section patterns */
+      section {
+        padding: 88px 0;
+        position: relative;
+      }
+      section .label {
+        color: var(--brand-3);
+        font-weight: 700;
+        letter-spacing: 0.25px;
+        margin-bottom: 8px;
+      }
+      section h2 {
+        font-size: clamp(24px, 3.6vw, 40px);
+        line-height: 1.15;
+        margin: 0 0 10px;
+      }
+      section p.lead {
+        margin-top: 6px;
+      }
+
+      .feature {
+        padding: 20px;
+        border-radius: 18px;
+        border: 1px solid rgba(255, 255, 255, 0.07);
+        background: linear-gradient(
+          180deg,
+          rgba(255, 255, 255, 0.03),
+          rgba(255, 255, 255, 0.01)
+        );
+      }
+      .feature h3 {
+        margin: 8px 0 6px;
+        font-size: 20px;
+      }
+      .icon {
+        width: 28px;
+        height: 28px;
+      }
+
+      /* Stats */
+      .stats {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 16px;
+        margin-top: 26px;
+      }
+      .stat {
+        padding: 18px;
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-radius: 18px;
+        background: linear-gradient(
+          180deg,
+          rgba(255, 255, 255, 0.03),
+          rgba(255, 255, 255, 0.01)
+        );
+      }
+      .stat .num {
+        font-size: 30px;
         font-weight: 800;
       }
-      .module h3 {
-        margin: 10px 0 6px;
-        font-size: 18px;
-      }
-      .module p {
-        margin: 0;
-        font-size: 14px;
-        color: var(--muted);
+      .stat .sub {
+        color: var(--text-dim);
       }
 
-      /* FAQ icons toggle */
-      details.card summary svg.plus {
-        display: inline-block;
+      /* Showcase cards */
+      .showcase {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 18px;
+        margin-top: 22px;
       }
-      details.card summary svg.close {
-        display: none;
+      .shot {
+        position: relative;
+        aspect-ratio: 16/10;
+        border-radius: 18px;
+        background: linear-gradient(180deg, #0b1324, #0a1120);
+        border: 1px solid rgba(255, 255, 255, 0.06);
+        overflow: hidden;
       }
-      details[open].card summary svg.plus {
-        display: none;
-      }
-      details[open].card summary svg.close {
-        display: inline-block;
+      .shot::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: radial-gradient(
+          1200px 300px at 30% -10%,
+          rgba(78, 118, 228, 0.25),
+          transparent 55%
+        );
       }
 
-      /* Footer extra space on mobile so bottom bar doesn't cover links */
-      @media (max-width: 767.98px) {
-        footer {
-          padding-bottom: 120px;
+      /* Pricing */
+      .pricing {
+        display: grid;
+        grid-template-columns: 1.2fr 0.8fr;
+        gap: 24px;
+        align-items: stretch;
+      }
+      .price-card {
+        padding: 26px;
+      }
+      .price {
+        font-size: 44px;
+        font-weight: 800;
+      }
+      .check {
+        color: var(--ok);
+      }
+
+      /* FAQ */
+      .faq {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+      }
+      .qa {
+        padding: 18px;
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-radius: 16px;
+        background: linear-gradient(
+          180deg,
+          rgba(255, 255, 255, 0.03),
+          rgba(255, 255, 255, 0.01)
+        );
+      }
+      .qa h4 {
+        margin: 0 0 6px;
+      }
+
+      /* Footer */
+      footer {
+        padding: 36px 0;
+        border-top: 1px solid rgba(255, 255, 255, 0.06);
+        background: linear-gradient(
+          180deg,
+          rgba(255, 255, 255, 0.02),
+          transparent
+        );
+      }
+      .foot-grid {
+        display: grid;
+        grid-template-columns: 1.2fr 0.8fr;
+        gap: 18px;
+        align-items: center;
+      }
+      .foot-links {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 14px;
+        color: var(--text-dim);
+      }
+      .small {
+        font-size: 13px;
+        color: var(--text-dim);
+      }
+
+      /* Badges */
+      .badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 8px 12px;
+        border-radius: 999px;
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        color: var(--text-dim);
+        background: linear-gradient(
+          180deg,
+          rgba(255, 255, 255, 0.03),
+          rgba(255, 255, 255, 0.01)
+        );
+      }
+
+      /* Reveal on scroll */
+      .reveal {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 0.7s ease, transform 0.7s ease;
+      }
+      .reveal.in-view {
+        opacity: 1;
+        transform: none;
+      }
+
+      /* Back to top */
+      .to-top {
+        position: fixed;
+        right: 16px;
+        bottom: 16px;
+        z-index: 1000;
+        opacity: 0;
+        pointer-events: none;
+        transition: 0.25s;
+      }
+      .to-top.show {
+        opacity: 1;
+        pointer-events: auto;
+      }
+
+      /* Responsive */
+      @media (max-width: 1100px) {
+        .hero-grid {
+          grid-template-columns: 1fr;
+        }
+        .pricing {
+          grid-template-columns: 1fr;
+        }
+        .foot-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+      @media (max-width: 860px) {
+        .grid-4 {
+          grid-template-columns: repeat(2, 1fr);
+        }
+        .grid-3 {
+          grid-template-columns: repeat(2, 1fr);
+        }
+        .stats {
+          grid-template-columns: repeat(2, 1fr);
+        }
+        .showcase {
+          grid-template-columns: 1fr 1fr;
+        }
+        .faq {
+          grid-template-columns: 1fr;
+        }
+      }
+      @media (max-width: 720px) {
+        .nav-links {
+          display: none;
+        } /* header linklerini gizle */
+        .nav {
+          justify-content: center;
+          gap: 12px;
+          padding: 8px 0;
+        } /* daha ince navbar */
+        .nav-logo span {
+          display: none;
+        } /* sadece logo kalsın */
+        .hero {
+          padding-top: 50px;
+        }
+        .grid-2 {
+          grid-template-columns: 1fr;
+        }
+        .grid-3,
+        .grid-4 {
+          grid-template-columns: 1fr;
+        }
+        .showcase {
+          grid-template-columns: 1fr;
+        }
+        .menu-toggle {
+          display: flex;
+        } /* mobil menü butonunu göster */
+      }
+
+      /* Decorative canvas background */
+      #bgfx {
+        position: fixed;
+        inset: 0;
+        z-index: -1;
+        opacity: 0.45;
+      }
+
+      /* Mobile menu */
+      .menu-toggle {
+        position: fixed;
+        right: 14px;
+        bottom: 18px;
+        z-index: 1100;
+        display: none;
+        align-items: center;
+        gap: 8px;
+        padding: 10px 12px;
+        border-radius: 999px;
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        background: linear-gradient(
+          180deg,
+          rgba(255, 255, 255, 0.05),
+          rgba(255, 255, 255, 0.02)
+        );
+        color: var(--text);
+        box-shadow: var(--shadow-1);
+      }
+      .mobile-menu {
+        position: fixed;
+        inset: 0;
+        z-index: 1200;
+        background: rgba(8, 12, 21, 0.75);
+        backdrop-filter: blur(12px);
+        opacity: 0;
+        pointer-events: none;
+        transition: 0.25s;
+      }
+      .mobile-menu.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      .mobile-menu-inner {
+        position: absolute;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        width: min(82vw, 360px);
+        background: linear-gradient(180deg, #0b1324, #0a1120);
+        border-left: 1px solid rgba(255, 255, 255, 0.08);
+        padding: 18px;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+      }
+      .mobile-links {
+        display: grid;
+        gap: 10px;
+      }
+      .mobile-links a {
+        padding: 10px 12px;
+        border-radius: 10px;
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        color: var(--text-dim);
+      }
+      .mobile-links a:hover {
+        color: var(--text);
+      }
+      .menu-close {
+        align-self: flex-end;
+        font-size: 24px;
+        line-height: 1;
+        background: transparent;
+        border: 0;
+        color: var(--text-dim);
+        padding: 4px 8px;
+        border-radius: 8px;
+      }
+      .mobile-buy {
+        justify-content: center;
+      }
+
+      /* Form controls */
+      input[type="text"],
+      input[type="email"],
+      textarea {
+        width: 100%;
+        padding: 12px 14px;
+        border-radius: 12px;
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        background: linear-gradient(
+          180deg,
+          rgba(255, 255, 255, 0.03),
+          rgba(255, 255, 255, 0.01)
+        );
+        color: var(--text);
+        outline: none;
+        transition: border-color 0.2s, box-shadow 0.2s;
+      }
+      input::placeholder,
+      textarea::placeholder {
+        color: var(--text-dim);
+      }
+      input:focus,
+      textarea:focus {
+        border-color: var(--brand-3);
+        box-shadow: 0 0 0 3px rgba(78, 118, 228, 0.2);
+      }
+      @media (max-width: 860px) {
+        .nav-buy {
+          display: none !important;
         }
       }
     </style>
   </head>
   <body>
-    <!-- Decorative haze -->
-    <div class="haze-1" aria-hidden></div>
-    <div class="haze-2" aria-hidden></div>
+    <a class="skip" href="#main">Skip to content</a>
+    <canvas id="bgfx" aria-hidden="true"></canvas>
 
-    <!-- HEADER -->
+    <svg width="0" height="0" style="position: absolute">
+      <defs>
+        <linearGradient id="g1" x1="0" x2="1" y1="0" y2="1">
+          <stop stop-color="#4e76e4" offset="0" />
+          <stop stop-color="#7fa0ff" offset="1" />
+        </linearGradient>
+        <symbol id="i-check" viewBox="0 0 24 24">
+          <path
+            fill="url(#g1)"
+            d="M9.5 16.1 5.4 12l-1.4 1.4 5.5 5.5L20 8.9 18.6 7.5z"
+          />
+        </symbol>
+        <symbol id="i-speed" viewBox="0 0 24 24">
+          <path
+            fill="url(#g1)"
+            d="M12 3a9 9 0 1 0 9 9c0-5-4-9-9-9Zm0 16a7 7 0 0 1-7-7 7 7 0 0 1 12.8-3.9l-3 3A3 3 0 1 0 12 16Z"
+          />
+        </symbol>
+        <symbol id="i-pen" viewBox="0 0 24 24">
+          <path
+            fill="url(#g1)"
+            d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25ZM20.71 7.04a1 1 0 0 0 0-1.41l-2.34-2.34a1 1 0 0 0-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83Z"
+          />
+        </symbol>
+        <symbol id="i-puzzle" viewBox="0 0 24 24">
+          <path
+            fill="url(#g1)"
+            d="M14 3h-2a2 2 0 0 0-2 2v1H7a2 2 0 0 0-2 2v2h1a2 2 0 1 1 0 4H5v2a2 2 0 0 0 2 2h3v-1a2 2 0 1 1 4 0v1h3a2 2 0 0 0 2-2v-3h-1a2 2 0 1 1 0-4h1V7a2 2 0 0 0-2-2h-3V5a2 2 0 0 0-2-2Z"
+          />
+        </symbol>
+        <symbol id="i-rocket" viewBox="0 0 24 24">
+          <path
+            fill="url(#g1)"
+            d="M12 2c2.8 0 5 2.2 5 5 0 3.9-3.6 7.8-5 11-1.4-3.2-5-7.1-5-11 0-2.8 2.2-5 5-5Zm0 6.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3Zm-6.5 9c1.6-1.6 3.9-1.3 6 0-1.3 1.5-2.9 3-4.8 3.5a.8.8 0 0 1-1-.9c.2-1.1.6-2 .8-2.6Z"
+          />
+        </symbol>
+        <symbol id="i-grid" viewBox="0 0 24 24">
+          <path
+            fill="url(#g1)"
+            d="M4 4h7v7H4zM13 4h7v7h-7zM4 13h7v7H4zM13 13h7v7h-7z"
+          />
+        </symbol>
+        <symbol id="i-shield" viewBox="0 0 24 24">
+          <path
+            fill="url(#g1)"
+            d="M12 2 4 5v6c0 5 3.4 9.7 8 11 4.6-1.3 8-6 8-11V5l-8-3Z"
+          />
+        </symbol>
+        <symbol id="i-cursor" viewBox="0 0 24 24">
+          <path fill="url(#g1)" d="M3 2l8 19 2-7 7-2L3 2z" />
+        </symbol>
+        <symbol id="i-hourglass" viewBox="0 0 24 24">
+          <path fill="url(#g1)" d="M6 2h12v6l-4 4 4 4v6H6v-6l4-4-4-4V2z" />
+        </symbol>
+        <symbol id="i-star" viewBox="0 0 24 24">
+          <path
+            fill="url(#g1)"
+            d="M12 2l3.1 6.2 6.9 1-5 4.9 1.2 6.9L12 18l-6.2 3.3L7 14.1 2 9.2l6.9-1L12 2z"
+          />
+        </symbol>
+      </defs>
+    </svg>
+
     <header>
       <div class="container nav">
-        <!-- Left placeholder (keeps center alignment on mobile) -->
-        <div class="mobile-spacer"></div>
-
-        <!-- Brand (center on mobile) -->
-        <div class="brand-wrap">
-          <a href="#" class="brand" aria-label="Entreple home">
-            <img src="assets/logo.png" alt="Entreple logo" />
-            <span>Entreple</span>
-          </a>
-        </div>
-
-        <!-- Desktop nav links -->
-        <nav class="links" aria-label="Primary">
+        <a class="nav-logo" href="#top" aria-label="Entreple Home">
+          <img src="assets/logo.png" alt="Entreple logo" loading="eager" />
+          <span>Entreple</span>
+        </a>
+        <nav class="nav-links" aria-label="Primary">
+          <a href="#product">Product</a>
           <a href="#inside">Inside</a>
-          <a href="#features">Features</a>
-          <a href="#how">How it works</a>
+          <a href="#benefits">Benefits</a>
+          <a href="#results">Results</a>
+          <a href="#showcase">Showcase</a>
           <a href="#pricing">Pricing</a>
           <a href="#faq">FAQ</a>
+          <a href="#contact">Contact</a>
         </nav>
-
-        <!-- Desktop CTA -->
-        <div class="right-cta">
-          <a href="#pricing" class="btn btn-primary">Buy Builder Pack</a>
-        </div>
+        <a class="cta nav-buy" href="#pricing" data-cta>
+          <svg class="icon" aria-hidden="true"><use href="#i-rocket" /></svg>
+          <span>Buy Now</span> <span class="price">$99</span>
+        </a>
       </div>
     </header>
 
-    <!-- HERO -->
-    <section id="hero" class="section">
-      <div class="container">
-        <div class="grid">
-          <div>
-            <div class="pill mb-6">
-              <span
-                style="
-                  width: 6px;
-                  height: 6px;
-                  border-radius: 50%;
-                  background: var(--primary);
-                "
-              ></span>
-              Builder Pack • From Nobody to Brand
-            </div>
-            <h1>
-              Launch your brand in days—<span style="color: var(--primary)"
-                >not months</span
-              >
-            </h1>
-            <p class="text-muted">
-              A crisp, no‑fluff digital kit to go from idea to a live, credible
-              brand. Name. Logo. One‑page site. Product packaging. Content &
-              posting system. A 14‑day launch roadmap to get you moving—fast.
-            </p>
-            <div class="mt-6">
-              <a href="#pricing" class="btn btn-primary">Buy Builder Pack</a>
-              <a href="#how" class="btn btn-ghost" style="margin-left: 8px"
-                >See how it works</a
-              >
-            </div>
-            <ul
-              class="mt-6 text-muted-2"
-              style="font-size: 14px; padding-left: 0; list-style: none"
-            >
-              <li class="mt-2">✔️ Lifetime access & free updates</li>
-              <li class="mt-2">✔️ 100% digital. Instant download</li>
-              <li class="mt-2">✔️ No coding required to use</li>
-            </ul>
-          </div>
+    <!-- Mobile Menu Toggle & Drawer -->
+    <button class="menu-toggle" aria-label="Open menu" aria-expanded="false">
+      <svg class="icon" aria-hidden="true"><use href="#i-grid" /></svg> Menu
+    </button>
+    <aside class="mobile-menu" aria-hidden="true">
+      <div class="mobile-menu-inner">
+        <button class="menu-close" aria-label="Close menu">×</button>
+        <nav class="mobile-links" aria-label="Mobile">
+          <a href="#product">Product</a>
+          <a href="#inside">Inside</a>
+          <a href="#benefits">Benefits</a>
+          <a href="#results">Results</a>
+          <a href="#showcase">Showcase</a>
+          <a href="#pricing">Pricing</a>
+          <a href="#faq">FAQ</a>
+          <a href="#contact">Contact</a>
+        </nav>
+        <a class="cta mobile-buy" href="#pricing">
+          <svg class="icon" aria-hidden="true"><use href="#i-rocket" /></svg>
+          Buy for <span class="price">$99</span>
+        </a>
+      </div>
+    </aside>
 
-          <!-- Visual card -->
-          <div style="position: relative">
-            <div class="card p-6 rounded-xxl">
-              <div style="display: flex; align-items: center; gap: 12px">
-                <img
-                  src="assets/logo.png"
-                  alt="Entreple logo"
-                  style="width: 40px; height: 40px; border-radius: 14px"
+    <main id="main">
+      <!-- HERO -->
+      <section class="hero container">
+        <div class="hero-grid">
+          <div>
+            <span class="eyebrow"
+              ><svg class="icon" aria-hidden="true"><use href="#i-star" /></svg>
+              Builder Pack</span
+            >
+            <h1 class="text-gradient">
+              Go live in 3 days — done‑for‑you brand build. We design, set up
+              and launch everything for you.
+            </h1>
+            <p class="lead">
+              With the <strong>Entreple Builder Pack</strong>, we design your
+              identity, build your site, connect domain & payments, set up
+              social, and deliver a 2-week content plan with a launch checklist
+              — in 3 days.
+            </p>
+            <div class="hero-ctas">
+              <a class="cta" href="#pricing" data-cta>
+                <svg class="icon" aria-hidden="true">
+                  <use href="#i-rocket" />
+                </svg>
+                <span>Get the Pack</span> <span class="price">$99</span>
+              </a>
+              <a class="btn-outline" href="#inside">
+                <svg class="icon" aria-hidden="true">
+                  <use href="#i-grid" />
+                </svg>
+                <span>See what’s inside</span>
+              </a>
+            </div>
+            <div
+              style="
+                margin-top: 18px;
+                display: flex;
+                gap: 10px;
+                flex-wrap: wrap;
+              "
+            >
+              <span class="badge"
+                ><svg class="icon" aria-hidden="true">
+                  <use href="#i-speed" />
+                </svg>
+                Quick start, zero fluff</span
+              >
+              <span class="badge"
+                ><svg class="icon" aria-hidden="true">
+                  <use href="#i-shield" />
+                </svg>
+                Practical, battle‑tested structure</span
+              >
+              <span class="badge"
+                ><svg class="icon" aria-hidden="true">
+                  <use href="#i-pen" />
+                </svg>
+                Polished copy frameworks</span
+              >
+            </div>
+          </div>
+          <div class="mock reveal" aria-hidden="true">
+            <div class="orb one"></div>
+            <div class="orb two"></div>
+            <div class="mock-inner">
+              <div
+                class="card glass"
+                style="right: 18px; left: 18px; top: 18px"
+              >
+                <strong>Brand System</strong>
+                <p class="small">
+                  Naming grid • Voice kit • Color ramps • Logo scaffolds
+                </p>
+              </div>
+              <div class="card" style="width: 48%; left: 18px; bottom: 86px">
+                <strong>Launch Checklist</strong>
+                <p class="small">Crystal steps from draft to publish.</p>
+              </div>
+              <div class="card" style="width: 46%; right: 18px; bottom: 38px">
+                <strong>Copy Blocks</strong>
+                <p class="small">Hooks, value props, objections, CTAs.</p>
+              </div>
+            </div>
+            <div class="ticker" aria-hidden="true">
+              <span>Design · Copy · Launch · Distribution · Iteration ·</span
+              ><span>Identity · Credibility · Momentum · Conversion ·</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- PROBLEM -->
+
+      <section id="product">
+        <div class="container reveal">
+          <div class="label">Done‑for‑you</div>
+          <h2 class="text-gradient">
+            Stop juggling. We build the whole foundation for you.
+          </h2>
+          <p class="lead">
+            Skip the overwhelm of logos, pages, payments and “when to post?”
+            spreadsheets. In three focused days we deliver a credible brand and
+            a working presence so you can start selling immediately.
+          </p>
+          <div class="grid grid-4" style="margin-top: 22px">
+            <div class="feature">
+              <svg class="icon" aria-hidden="true"><use href="#i-pen" /></svg>
+              <h3>Custom identity</h3>
+              <p class="muted">
+                Naming options, brand voice, colors, and a tailored logo that
+                fits your market.
+              </p>
+            </div>
+            <div class="feature">
+              <svg class="icon" aria-hidden="true"><use href="#i-grid" /></svg>
+              <h3>Website & domain</h3>
+              <p class="muted">
+                A clean, responsive site connected to your domain with analytics
+                and legal pages.
+              </p>
+            </div>
+            <div class="feature">
+              <svg class="icon" aria-hidden="true">
+                <use href="#i-rocket" />
+              </svg>
+              <h3>Payments live</h3>
+              <p class="muted">
+                We hook up checkout so you can charge globally from day one
+                (fees not included).
+              </p>
+            </div>
+            <div class="feature">
+              <svg class="icon" aria-hidden="true"><use href="#i-star" /></svg>
+              <h3>Social & content</h3>
+              <p class="muted">
+                Accounts set up, first assets prepared, plus a 14‑day content
+                plan with posting hours.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- WHAT'S INSIDE -->
+
+      <section id="inside">
+        <div class="container reveal">
+          <div class="label">What you get</div>
+          <h2 class="text-gradient">A complete, 3‑day build for your brand</h2>
+          <div class="grid grid-3" style="margin-top: 22px">
+            <div class="feature card">
+              <h3>Day 1 — Identity</h3>
+              <p class="muted">
+                Discovery call, naming directions, brand voice rules, color
+                palette, typography, and 2 logo concepts. We align fast and lock
+                the direction.
+              </p>
+            </div>
+            <div class="feature card">
+              <h3>Day 2 — Web & Tech</h3>
+              <p class="muted">
+                Responsive website (landing), domain connection, payment
+                integration, analytics, and essential legal templates.
+                Performance & SEO basics included.
+              </p>
+            </div>
+            <div class="feature card">
+              <h3>Day 3 — Social & Launch</h3>
+              <p class="muted">
+                Accounts setup, profile images/cover, 14‑day content calendar
+                with copy starters, best posting hours for your markets, and a
+                launch checklist.
+              </p>
+            </div>
+            <div class="feature card">
+              <h3>Assets</h3>
+              <p class="muted">
+                Logo files (SVG/PNG), brand sheet (one‑pager), page copy blocks,
+                and reusable templates for posts and emails.
+              </p>
+            </div>
+            <div class="feature card">
+              <h3>Support</h3>
+              <p class="muted">
+                You keep our contact number. Ask questions any time after launch
+                — you’re not alone.
+              </p>
+            </div>
+            <div class="feature card">
+              <h3>Requirements</h3>
+              <p class="muted">
+                Tell us what you sell, your motto, vision & mission, business
+                type, and design preferences. We handle the rest.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- BENEFITS -->
+
+      <section id="benefits">
+        <div class="container reveal">
+          <div class="label">Benefits</div>
+          <h2 class="text-gradient">
+            Speed, clarity, credibility — without hiring a team
+          </h2>
+          <div class="grid grid-3" style="margin-top: 20px">
+            <div class="feature">
+              <h3>3‑day launch</h3>
+              <p class="muted">
+                From zero to live in 72 hours once inputs are confirmed.
+              </p>
+            </div>
+            <div class="feature">
+              <h3>One flow</h3>
+              <p class="muted">
+                Identity → site → payments → social. No context switching.
+              </p>
+            </div>
+            <div class="feature">
+              <h3>Serious first impression</h3>
+              <p class="muted">
+                Polished visuals and tight copy build trust immediately.
+              </p>
+            </div>
+            <div class="feature">
+              <h3>Own everything</h3>
+              <p class="muted">
+                You control the domain, payment account, files, and analytics.
+              </p>
+            </div>
+            <div class="feature">
+              <h3>Future‑proof</h3>
+              <p class="muted">
+                Clean structure you can extend as the business grows.
+              </p>
+            </div>
+            <div class="feature">
+              <h3>Direct line</h3>
+              <p class="muted">
+                After launch, message us any time when you’re unsure.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- RESULTS / OUTCOMES -->
+
+      <section id="results">
+        <div class="container reveal">
+          <div class="label">Outcomes</div>
+          <h2 class="text-gradient">Deliverables in your hands on Day 3</h2>
+          <div class="grid grid-2" style="margin-top: 16px">
+            <div class="feature card">
+              <h3>Live presence</h3>
+              <p class="muted">
+                A fast website on your domain with analytics and payment ready
+                to accept orders.
+              </p>
+            </div>
+            <div class="feature card">
+              <h3>Brand kit</h3>
+              <p class="muted">
+                Logo exports, color & type specs, and a one‑page guide to keep
+                everything consistent.
+              </p>
+            </div>
+            <div class="feature card">
+              <h3>Social ready</h3>
+              <p class="muted">
+                Optimized profiles and a 14‑day content plan with suggested
+                posting times.
+              </p>
+            </div>
+            <div class="feature card">
+              <h3>Launch system</h3>
+              <p class="muted">
+                Checklist, copy blocks, and templates for DMs/emails to create
+                early momentum.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SHOWCASE / VISUALS -->
+      <section id="showcase">
+        <div class="container reveal">
+          <div class="label">Preview</div>
+          <h2 class="text-gradient">A glimpse of the visual language</h2>
+          <p class="lead">
+            Clean geometry, subtle glow, sharp typography. The look is serious
+            and modern—no clutter, no gimmicks.
+          </p>
+          <div class="showcase">
+            <div class="shot">
+              <svg
+                viewBox="0 0 600 380"
+                width="100%"
+                height="100%"
+                preserveAspectRatio="none"
+              >
+                <defs>
+                  <linearGradient id="p1" x1="0" x2="1" y1="0" y2="1">
+                    <stop stop-color="#0b1324" offset="0" />
+                    <stop stop-color="#0a1120" offset="1" />
+                  </linearGradient>
+                </defs>
+                <rect width="600" height="380" fill="url(#p1)" />
+                <g opacity="0.9">
+                  <rect
+                    x="36"
+                    y="32"
+                    width="528"
+                    height="64"
+                    rx="14"
+                    fill="#101a30"
+                  />
+                  <rect
+                    x="56"
+                    y="48"
+                    width="220"
+                    height="16"
+                    rx="8"
+                    fill="#4e76e4"
+                  />
+                  <rect
+                    x="56"
+                    y="72"
+                    width="340"
+                    height="10"
+                    rx="5"
+                    fill="#7fa0ff"
+                  />
+                  <rect
+                    x="36"
+                    y="116"
+                    width="268"
+                    height="210"
+                    rx="16"
+                    fill="#0f192d"
+                  />
+                  <rect
+                    x="316"
+                    y="116"
+                    width="248"
+                    height="210"
+                    rx="16"
+                    fill="#0f192d"
+                  />
+                  <rect
+                    x="56"
+                    y="140"
+                    width="180"
+                    height="12"
+                    rx="6"
+                    fill="#c6d2ff"
+                  />
+                  <rect
+                    x="56"
+                    y="164"
+                    width="210"
+                    height="10"
+                    rx="5"
+                    fill="#9db0ff"
+                  />
+                  <rect
+                    x="336"
+                    y="140"
+                    width="180"
+                    height="12"
+                    rx="6"
+                    fill="#c6d2ff"
+                  />
+                  <rect
+                    x="336"
+                    y="164"
+                    width="170"
+                    height="10"
+                    rx="5"
+                    fill="#9db0ff"
+                  />
+                </g>
+              </svg>
+            </div>
+            <div class="shot">
+              <svg
+                viewBox="0 0 600 380"
+                width="100%"
+                height="100%"
+                preserveAspectRatio="none"
+              >
+                <rect width="600" height="380" fill="#0a1120" />
+                <circle
+                  cx="120"
+                  cy="120"
+                  r="70"
+                  fill="#4e76e4"
+                  opacity="0.25"
                 />
-                <div>
-                  <div class="text-muted" style="font-size: 13px">
-                    Entreple Kit
-                  </div>
-                  <div style="font-weight: 600">Builder Pack</div>
-                </div>
-              </div>
-              <div class="grid-2 mt-6">
-                <div class="card" style="padding: 16px">
-                  <div class="text-muted" style="font-size: 12px">Included</div>
-                  <div class="mt-1" style="font-weight: 600">
-                    Brand Name System
-                  </div>
-                </div>
-                <div class="card" style="padding: 16px">
-                  <div class="text-muted" style="font-size: 12px">Included</div>
-                  <div class="mt-1" style="font-weight: 600">
-                    Logo + Guidelines
-                  </div>
-                </div>
-                <div class="card" style="padding: 16px">
-                  <div class="text-muted" style="font-size: 12px">Included</div>
-                  <div class="mt-1" style="font-weight: 600">
-                    One‑Page Website
-                  </div>
-                </div>
-                <div class="card" style="padding: 16px">
-                  <div class="text-muted" style="font-size: 12px">Included</div>
-                  <div class="mt-1" style="font-weight: 600">
-                    Product Packaging
-                  </div>
-                </div>
-                <div class="card" style="padding: 16px">
-                  <div class="text-muted" style="font-size: 12px">Included</div>
-                  <div class="mt-1" style="font-weight: 600">
-                    Content Edit Toolkit
-                  </div>
-                </div>
-                <div class="card" style="padding: 16px">
-                  <div class="text-muted" style="font-size: 12px">Included</div>
-                  <div class="mt-1" style="font-weight: 600">
-                    Social Setup + Bio
-                  </div>
-                </div>
-                <div class="card" style="padding: 16px">
-                  <div class="text-muted" style="font-size: 12px">Included</div>
-                  <div class="mt-1" style="font-weight: 600">
-                    Posting Calendar
-                  </div>
-                </div>
-                <div class="card" style="padding: 16px">
-                  <div class="text-muted" style="font-size: 12px">Included</div>
-                  <div class="mt-1" style="font-weight: 600">
-                    14‑Day Launch Plan
-                  </div>
-                </div>
-              </div>
+                <circle cx="200" cy="260" r="60" fill="#7fa0ff" opacity="0.2" />
+                <rect
+                  x="260"
+                  y="60"
+                  width="300"
+                  height="30"
+                  rx="8"
+                  fill="#101a30"
+                />
+                <rect
+                  x="260"
+                  y="110"
+                  width="260"
+                  height="12"
+                  rx="6"
+                  fill="#c6d2ff"
+                />
+                <rect
+                  x="260"
+                  y="132"
+                  width="230"
+                  height="10"
+                  rx="5"
+                  fill="#9db0ff"
+                />
+                <rect
+                  x="260"
+                  y="156"
+                  width="200"
+                  height="10"
+                  rx="5"
+                  fill="#9db0ff"
+                />
+              </svg>
+            </div>
+            <div class="shot">
+              <svg
+                viewBox="0 0 600 380"
+                width="100%"
+                height="100%"
+                preserveAspectRatio="none"
+              >
+                <rect width="600" height="380" fill="#0b1324" />
+                <rect
+                  x="38"
+                  y="36"
+                  width="524"
+                  height="308"
+                  rx="18"
+                  fill="#0f192d"
+                />
+                <rect
+                  x="66"
+                  y="66"
+                  width="200"
+                  height="16"
+                  rx="8"
+                  fill="#4e76e4"
+                />
+                <rect
+                  x="66"
+                  y="92"
+                  width="320"
+                  height="10"
+                  rx="5"
+                  fill="#7fa0ff"
+                />
+                <rect x="66" y="130" width="460" height="1" fill="#1b2742" />
+                <rect
+                  x="66"
+                  y="150"
+                  width="200"
+                  height="10"
+                  rx="5"
+                  fill="#c6d2ff"
+                />
+                <rect
+                  x="66"
+                  y="170"
+                  width="220"
+                  height="10"
+                  rx="5"
+                  fill="#9db0ff"
+                />
+                <rect
+                  x="66"
+                  y="190"
+                  width="260"
+                  height="10"
+                  rx="5"
+                  fill="#9db0ff"
+                />
+              </svg>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- HOW IT WORKS -->
+
+      <section id="how">
+        <div class="container reveal">
+          <div class="label">Timeline</div>
+          <h2 class="text-gradient">The 3‑day build — simple and focused</h2>
+          <div class="grid grid-3" style="margin-top: 18px">
+            <div class="feature">
+              <h3>Day 1 — Identity</h3>
+              <p class="muted">
+                Kickoff + discovery. We present naming routes and logo
+                directions, agree on voice & colors.
+              </p>
+            </div>
+            <div class="feature">
+              <h3>Day 2 — Website & Tech</h3>
+              <p class="muted">
+                We build and connect your site, domain and payments. You review
+                once — we adjust same day.
+              </p>
+            </div>
+            <div class="feature">
+              <h3>Day 3 — Social & Launch</h3>
+              <p class="muted">
+                Accounts set, first assets, content calendar and posting hours.
+                Final checks and go‑live.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- PRICING -->
+
+      <section id="pricing">
+        <div class="container reveal">
+          <div class="label">Pricing</div>
+          <h2 class="text-gradient">One service. Clear scope.</h2>
+          <div class="pricing">
+            <div class="card price-card">
               <div
                 style="
                   display: flex;
                   align-items: center;
                   justify-content: space-between;
-                  border-top: 1px solid rgba(255, 255, 255, 0.1);
-                  margin-top: 16px;
-                  padding-top: 16px;
+                  gap: 12px;
                 "
               >
-                <div class="text-muted-2" style="font-size: 14px">
-                  Everything you need, organized
+                <div>
+                  <h3 style="margin: 0">Builder Pack (Done‑for‑You)</h3>
+                  <p class="muted" style="margin: 6px 0 0">
+                    3‑day build • Single business • Ongoing contact
+                  </p>
                 </div>
-                <a href="#pricing" class="btn btn-primary">Get it</a>
+                <div class="price">$99</div>
+              </div>
+              <ul style="margin: 18px 0 0; padding-left: 18px">
+                <li>
+                  <svg class="icon" aria-hidden="true">
+                    <use href="#i-check" />
+                  </svg>
+                  Custom logo & identity (colors, type, voice)
+                </li>
+                <li>
+                  <svg class="icon" aria-hidden="true">
+                    <use href="#i-check" />
+                  </svg>
+                  Responsive website with copy blocks
+                </li>
+                <li>
+                  <svg class="icon" aria-hidden="true">
+                    <use href="#i-check" />
+                  </svg>
+                  Domain binding & payments integration
+                </li>
+                <li>
+                  <svg class="icon" aria-hidden="true">
+                    <use href="#i-check" />
+                  </svg>
+                  Social account setup + profile assets
+                </li>
+                <li>
+                  <svg class="icon" aria-hidden="true">
+                    <use href="#i-check" />
+                  </svg>
+                  14‑day content plan + posting hours
+                </li>
+                <li>
+                  <svg class="icon" aria-hidden="true">
+                    <use href="#i-check" />
+                  </svg>
+                  Launch checklist & templates
+                </li>
+              </ul>
+              <a
+                class="cta"
+                style="margin-top: 20px; display: inline-flex"
+                href="#contact"
+                aria-label="Start your build"
+              >
+                <svg class="icon" aria-hidden="true">
+                  <use href="#i-rocket" />
+                </svg>
+                <span>Start your build</span> <span class="price">$99</span>
+              </a>
+              <p class="small" style="margin-top: 10px">
+                Notes: Third‑party costs (domain, processor fees) are not
+                included. Digital service — all sales final.
+              </p>
+            </div>
+            <div class="card price-card">
+              <h3 style="margin-top: 0">What we need from you</h3>
+              <p class="muted">
+                Your product/service, motto, vision & mission, business type,
+                and design preferences. Provide timely feedback during the 3
+                days.
+              </p>
+              <div class="grid" style="gap: 10px; margin-top: 10px">
+                <span class="badge"
+                  ><svg class="icon" aria-hidden="true">
+                    <use href="#i-speed" />
+                  </svg>
+                  72‑hour build</span
+                >
+                <span class="badge"
+                  ><svg class="icon" aria-hidden="true">
+                    <use href="#i-cursor" />
+                  </svg>
+                  You own it all</span
+                >
+                <span class="badge"
+                  ><svg class="icon" aria-hidden="true">
+                    <use href="#i-shield" />
+                  </svg>
+                  Clear scope</span
+                >
               </div>
             </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- WHAT'S INSIDE -->
-    <section
-      id="inside"
-      class="section py-14"
-      style="border-top: 1px solid rgba(255, 255, 255, 0.1)"
-    >
-      <div class="container">
-        <h2 style="font-size: 30px; font-weight: 800; letter-spacing: -0.2px">
-          What’s inside the Builder Pack
-        </h2>
-        <p class="text-muted mt-2" style="max-width: 760px">
-          Everything is packaged as focused modules. Scan, execute, and move on.
-          No fluff.
-        </p>
+      <!-- FAQ -->
 
-        <div class="inside-grid mt-8">
-          <article class="module">
-            <div style="display: flex; align-items: center; gap: 12px">
-              <div class="num">1</div>
-              <h3 class="mb-0">Name & Positioning</h3>
+      <section id="faq">
+        <div class="container reveal">
+          <div class="label">FAQ</div>
+          <h2 class="text-gradient">Good to know</h2>
+          <div class="faq" style="margin-top: 16px">
+            <div class="qa">
+              <h4>Do you buy the domain for me?</h4>
+              <p class="muted">
+                We guide you and connect it. The domain purchase itself is paid
+                by you and stays in your account.
+              </p>
             </div>
-            <p class="mt-2">
-              Memorable name framework + one‑line value prop. Includes naming
-              checklist, uniqueness checks, and positioning patterns.
-            </p>
-          </article>
-          <article class="module">
-            <div style="display: flex; align-items: center; gap: 12px">
-              <div class="num">2</div>
-              <h3 class="mb-0">Logo & Mini‑Guidelines</h3>
+            <div class="qa">
+              <h4>Which payment platform?</h4>
+              <p class="muted">
+                We integrate a suitable processor for your region. Processing
+                fees are separate and paid to the provider.
+              </p>
             </div>
-            <p class="mt-2">
-              Editable logo bases (SVG), color & type presets, spacing rules,
-              export sizes (PNG/SVG) so everything looks consistent.
-            </p>
-          </article>
-          <article class="module">
-            <div style="display: flex; align-items: center; gap: 12px">
-              <div class="num">3</div>
-              <h3 class="mb-0">One‑Page Website</h3>
+            <div class="qa">
+              <h4>Revisions?</h4>
+              <p class="muted">
+                We iterate quickly during the 3‑day window. Small tweaks after
+                launch are fine via our contact line.
+              </p>
             </div>
-            <p class="mt-2">
-              Clean, fast, mobile‑first layout with copy prompts and SEO basics.
-              Quick deploy guide (Netlify/Vercel).
-            </p>
-          </article>
-          <article class="module">
-            <div style="display: flex; align-items: center; gap: 12px">
-              <div class="num">4</div>
-              <h3 class="mb-0">Product Packaging</h3>
+            <div class="qa">
+              <h4>What tech stack?</h4>
+              <p class="muted">
+                We use a lightweight, reliable stack. If you prefer a specific
+                tool, we adapt when possible.
+              </p>
             </div>
-            <p class="mt-2">
-              High‑trust digital product structure, cover design frames,
-              mockups, and delivery file checklist.
-            </p>
-          </article>
-          <article class="module">
-            <div style="display: flex; align-items: center; gap: 12px">
-              <div class="num">5</div>
-              <h3 class="mb-0">Content Edit Toolkit</h3>
+            <div class="qa">
+              <h4>Refunds?</h4>
+              <p class="muted">
+                Service work and digital files can’t be returned, so purchases
+                are final. Please read the scope above.
+              </p>
             </div>
-            <p class="mt-2">
-              Hook library, editing beats for short‑form, thumbnail frames, and
-              20 fill‑in caption formulas.
-            </p>
-          </article>
-          <article class="module">
-            <div style="display: flex; align-items: center; gap: 12px">
-              <div class="num">6</div>
-              <h3 class="mb-0">Social Setup</h3>
+            <div class="qa">
+              <h4>Availability?</h4>
+              <p class="muted">
+                Slots are limited to keep quality high. If we’re fully booked,
+                we’ll offer the next start date.
+              </p>
             </div>
-            <p class="mt-2">
-              Optimized bios, link blocks, highlight covers, and profile framing
-              that builds trust at a glance.
-            </p>
-          </article>
-          <article class="module">
-            <div style="display: flex; align-items: center; gap: 12px">
-              <div class="num">7</div>
-              <h3 class="mb-0">Posting Calendar</h3>
-            </div>
-            <p class="mt-2">
-              Weekly cadence with prompts and checklists—designed for
-              consistency and compounding reach.
-            </p>
-          </article>
-          <article class="module">
-            <div style="display: flex; align-items: center; gap: 12px">
-              <div class="num">8</div>
-              <h3 class="mb-0">Launch Roadmap (14 days)</h3>
-            </div>
-            <p class="mt-2">
-              Daily plan from Day 0 to Day 14. Build → announce → iterate. Start
-              getting sales quickly.
-            </p>
-          </article>
-          <article class="module">
-            <div style="display: flex; align-items: center; gap: 12px">
-              <div class="num">9</div>
-              <h3 class="mb-0">Sales Essentials</h3>
-            </div>
-            <p class="mt-2">
-              Objection bank, guarantee patterns, pricing ladders, and a
-              lightweight analytics starter.
-            </p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- FEATURES -->
-    <section id="features" class="section py-14">
-      <div class="container">
-        <div class="grid-3">
-          <div class="card feature">
-            <div style="display: flex; align-items: center; gap: 10px">
-              <svg
-                class="inline-icon"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                aria-hidden
-              >
-                <path
-                  d="M12 2l1.76 4.24L18 8l-4.24 1.76L12 14l-1.76-4.24L6 8l4.24-1.76L12 2z"
-                />
-              </svg>
-              <h3 class="mb-0" style="font-size: 18px">
-                No fluff—only execution
-              </h3>
-            </div>
-            <p class="text-muted mt-3">
-              Every file is actionable. Less theory, more doing. Ship fast with
-              checklists and ready‑to‑edit templates.
-            </p>
-          </div>
-          <div class="card feature">
-            <div style="display: flex; align-items: center; gap: 10px">
-              <svg
-                class="inline-icon"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                aria-hidden
-              >
-                <path
-                  d="M12 2l1.76 4.24L18 8l-4.24 1.76L12 14l-1.76-4.24L6 8l4.24-1.76L12 2z"
-                />
-              </svg>
-              <h3 class="mb-0" style="font-size: 18px">
-                Professional from day one
-              </h3>
-            </div>
-            <p class="text-muted mt-3">
-              Modern design language, credible copy, and a tight visual system
-              so you look legit immediately.
-            </p>
-          </div>
-          <div class="card feature">
-            <div style="display: flex; align-items: center; gap: 10px">
-              <svg
-                class="inline-icon"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                aria-hidden
-              >
-                <path
-                  d="M12 2l1.76 4.24L18 8l-4.24 1.76L12 14l-1.76-4.24L6 8l4.24-1.76L12 2z"
-                />
-              </svg>
-              <h3 class="mb-0" style="font-size: 18px">
-                Built for solo creators
-              </h3>
-            </div>
-            <p class="text-muted mt-3">
-              No team, no problem. The Pack assumes you’re one
-              person—time‑efficient and straightforward.
-            </p>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- HOW IT WORKS -->
-    <section
-      id="how"
-      class="section py-14"
-      style="border-top: 1px solid rgba(255, 255, 255, 0.1)"
-    >
-      <div class="container">
-        <h2 style="font-size: 30px; font-weight: 800; letter-spacing: -0.2px">
-          How it works
-        </h2>
-        <p class="text-muted mt-2" style="max-width: 760px">
-          Simple three‑phase flow. Use only a few hours a day and keep moving.
-        </p>
-        <div class="grid-3 mt-8">
-          <div class="card step">
-            <div class="tag">
-              <span
-                style="
-                  width: 6px;
-                  height: 6px;
-                  border-radius: 50%;
-                  background: var(--primary);
-                "
-              ></span>
-              Step 1
+      <!-- CONTACT -->
+      <section id="contact">
+        <div class="container reveal">
+          <div class="label">Contact</div>
+          <h2 class="text-gradient">Need a pre‑purchase detail?</h2>
+          <p class="lead">
+            Send a short note and we’ll get back with a direct answer.
+          </p>
+          <form
+            class="card"
+            style="padding: 18px; display: grid; gap: 12px"
+            onsubmit="openMail(event)"
+          >
+            <div class="grid grid-2">
+              <label>
+                Name<br /><input
+                  required
+                  type="text"
+                  name="name"
+                  placeholder="Your name"
+              /></label>
+              <label>
+                Email<br /><input
+                  required
+                  type="email"
+                  name="email"
+                  placeholder="you@example.com"
+              /></label>
             </div>
-            <h3 class="mt-3" style="font-size: 18px">Plan</h3>
-            <ul
-              class="text-muted mt-3"
-              style="font-size: 14px; padding-left: 18px"
-            >
-              <li>Pick your niche & customer promise</li>
-              <li>Decide name & positioning using the system</li>
-              <li>Choose color & type presets</li>
-            </ul>
-          </div>
-          <div class="card step">
-            <div class="tag">
-              <span
-                style="
-                  width: 6px;
-                  height: 6px;
-                  border-radius: 50%;
-                  background: var(--primary);
-                "
-              ></span>
-              Step 2
-            </div>
-            <h3 class="mt-3" style="font-size: 18px">Build</h3>
-            <ul
-              class="text-muted mt-3"
-              style="font-size: 14px; padding-left: 18px"
-            >
-              <li>Create a minimal logo + export assets</li>
-              <li>Spin up your one‑page site & product cover</li>
-              <li>Set up social profiles & posting cadence</li>
-            </ul>
-          </div>
-          <div class="card step">
-            <div class="tag">
-              <span
-                style="
-                  width: 6px;
-                  height: 6px;
-                  border-radius: 50%;
-                  background: var(--primary);
-                "
-              ></span>
-              Step 3
-            </div>
-            <h3 class="mt-3" style="font-size: 18px">Launch</h3>
-            <ul
-              class="text-muted mt-3"
-              style="font-size: 14px; padding-left: 18px"
-            >
-              <li>Publish your site & payment link</li>
-              <li>Post your first 10 pieces of content</li>
-              <li>Iterate daily with the 14‑day roadmap</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- PRICING -->
-    <section id="pricing" class="section py-14">
-      <div class="container">
-        <h2 style="font-size: 30px; font-weight: 800; letter-spacing: -0.2px">
-          Pricing
-        </h2>
-        <p class="text-muted mt-2" style="max-width: 760px">
-          One‑time payment. Lifetime access. Free updates as the Pack grows.
-        </p>
-
-        <div class="pricing mt-6">
-          <div class="card price-card">
+            <label>
+              Message<br /><textarea
+                required
+                name="message"
+                rows="4"
+                placeholder="Ask anything about the Builder Pack…"
+              ></textarea>
+            </label>
             <div
               style="
                 display: flex;
-                align-items: center;
                 justify-content: space-between;
+                align-items: center;
+                gap: 12px;
+                flex-wrap: wrap;
               "
             >
-              <div>
-                <div class="text-muted" style="font-size: 14px">
-                  Entreple Builder Pack
-                </div>
-                <div
-                  style="
-                    font-size: 34px;
-                    font-weight: 900;
-                    letter-spacing: -0.3px;
-                    margin-top: 4px;
-                  "
-                >
-                  $XX
-                  <span
-                    class="text-muted-2"
-                    style="font-size: 14px; vertical-align: 10%"
-                    >USD</span
-                  >
-                </div>
-              </div>
-              <span
-                class="text-muted"
-                style="
-                  font-size: 12px;
-                  border: 1px solid rgba(255, 255, 255, 0.1);
-                  padding: 6px 10px;
-                  border-radius: 999px;
-                  background: rgba(255, 255, 255, 0.06);
-                "
-                >Instant download</span
+              <span class="small"
+                >We reply within 24–48 hours on business days.</span
               >
+              <button class="cta" type="submit">
+                <svg class="icon" aria-hidden="true">
+                  <use href="#i-cursor" />
+                </svg>
+                Send message
+              </button>
             </div>
-            <ul
-              class="text-muted mt-5"
-              style="
-                font-size: 14px;
-                columns: 2;
-                column-gap: 18px;
-                padding-left: 18px;
-              "
-            >
-              <li>All templates & checklists</li>
-              <li>Logo & brand mini‑guide</li>
-              <li>One‑page site template</li>
-              <li>Posting calendar & prompts</li>
-              <li>14‑day launch roadmap</li>
-              <li>Free updates</li>
-            </ul>
-            <div class="mt-6">
-              <a href="#" class="btn btn-primary">Buy now</a>
-              <a href="#faq" class="btn btn-ghost" style="margin-left: 8px"
-                >Read FAQ</a
-              >
-            </div>
-            <p class="text-muted-2" style="font-size: 12px; margin-top: 14px">
-              Note: Due to instant access to digital files, all sales are final.
-            </p>
-          </div>
+          </form>
         </div>
-      </div>
-    </section>
+      </section>
+    </main>
 
-    <!-- FAQ -->
-    <section
-      id="faq"
-      class="section py-14"
-      style="border-top: 1px solid rgba(255, 255, 255, 0.1)"
-    >
-      <div class="container">
-        <h2 style="font-size: 30px; font-weight: 800; letter-spacing: -0.2px">
-          Frequently asked questions
-        </h2>
-        <div
-          class="grid-2 mt-6"
-          style="display: grid; grid-template-columns: 1fr; gap: 20px"
-        >
-          <details class="card">
-            <summary>
-              <span>Is this only for digital products?</span>
-              <span aria-hidden>
-                <svg
-                  class="inline-icon plus"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                >
-                  <path d="M12 5v14M5 12h14" />
-                </svg>
-                <svg
-                  class="inline-icon close"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                >
-                  <path d="M6 6l12 12M18 6l-12 12" />
-                </svg>
-              </span>
-            </summary>
-            <p class="text-muted mt-3">
-              It’s optimized for digital, but the same system works for services
-              and simple physical offers.
-            </p>
-          </details>
-
-          <details class="card">
-            <summary>
-              <span>Do I need design skills?</span>
-              <span aria-hidden>
-                <svg
-                  class="inline-icon plus"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                >
-                  <path d="M12 5v14M5 12h14" />
-                </svg>
-                <svg
-                  class="inline-icon close"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                >
-                  <path d="M6 6l12 12M18 6l-12 12" />
-                </svg>
-              </span>
-            </summary>
-            <p class="text-muted mt-3">
-              No. Templates, prompts, and presets guide you—just replace text
-              and images.
-            </p>
-          </details>
-
-          <details class="card">
-            <summary>
-              <span>What tools do I need?</span>
-              <span aria-hidden>
-                <svg
-                  class="inline-icon plus"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                >
-                  <path d="M12 5v14M5 12h14" />
-                </svg>
-                <svg
-                  class="inline-icon close"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                >
-                  <path d="M6 6l12 12M18 6l-12 12" />
-                </svg>
-              </span>
-            </summary>
-            <p class="text-muted mt-3">
-              A browser, a simple design tool (e.g., Canva or Figma), and your
-              payment link (Gumroad, Fourthwall, etc.).
-            </p>
-          </details>
-
-          <details class="card">
-            <summary>
-              <span>Refunds?</span>
-              <span aria-hidden>
-                <svg
-                  class="inline-icon plus"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                >
-                  <path d="M12 5v14M5 12h14" />
-                </svg>
-                <svg
-                  class="inline-icon close"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                >
-                  <path d="M6 6l12 12M18 6l-12 12" />
-                </svg>
-              </span>
-            </summary>
-            <p class="text-muted mt-3">
-              Because you get instant access to all digital files, all sales are
-              final.
-            </p>
-          </details>
-
-          <details class="card">
-            <summary>
-              <span>Team license?</span>
-              <span aria-hidden>
-                <svg
-                  class="inline-icon plus"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                >
-                  <path d="M12 5v14M5 12h14" />
-                </svg>
-                <svg
-                  class="inline-icon close"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                >
-                  <path d="M6 6l12 12M18 6l-12 12" />
-                </svg>
-              </span>
-            </summary>
-            <p class="text-muted mt-3">
-              One license per buyer. Contact us if you need a team license.
-            </p>
-          </details>
-
-          <details class="card">
-            <summary>
-              <span>Updates?</span>
-              <span aria-hidden>
-                <svg
-                  class="inline-icon plus"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                >
-                  <path d="M12 5v14M5 12h14" />
-                </svg>
-                <svg
-                  class="inline-icon close"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                >
-                  <path d="M6 6l12 12M18 6l-12 12" />
-                </svg>
-              </span>
-            </summary>
-            <p class="text-muted mt-3">
-              You’ll receive free updates—new templates and improvements added
-              over time.
-            </p>
-          </details>
-        </div>
-      </div>
-    </section>
-
-    <!-- FOOTER (desktop) -->
     <footer>
-      <div
-        class="container"
-        style="
-          display: flex;
-          align-items: center;
-          justify-content: space-between;
-          gap: 16px;
-          flex-wrap: wrap;
-        "
-      >
+      <div class="container foot-grid">
         <div style="display: flex; align-items: center; gap: 12px">
           <img
             src="assets/logo.png"
             alt="Entreple logo"
-            style="width: 28px; height: 28px; border-radius: 8px"
+            width="30"
+            height="30"
+            style="border-radius: 8px"
           />
-          <div class="text-muted" style="font-size: 14px">
-            © <span id="year"></span> Entreple. All rights reserved.
+          <div>
+            <strong>Entreple</strong>
+            <div class="small">Builder Pack – From Nobody to Brand</div>
           </div>
         </div>
-        <div
-          style="display: flex; align-items: center; gap: 20px; font-size: 14px"
-          class="text-muted"
-        >
-          <a href="#inside" class="text-muted" style="text-decoration: none"
-            >Inside</a
+        <div class="foot-links" aria-label="Footer navigation">
+          <a href="#product">Product</a>
+          <a href="#inside">Inside</a>
+          <a href="#benefits">Benefits</a>
+          <a href="#results">Results</a>
+          <a href="#showcase">Showcase</a>
+          <a href="#pricing">Pricing</a>
+          <a href="#faq">FAQ</a>
+          <a href="#contact">Contact</a>
+          <a href="#" onclick="alert('Terms link goes here.');return false;"
+            >Terms</a
           >
-          <a href="#features" class="text-muted" style="text-decoration: none"
-            >Features</a
-          >
-          <a href="#how" class="text-muted" style="text-decoration: none"
-            >How it works</a
-          >
-          <a href="#pricing" class="text-muted" style="text-decoration: none"
-            >Pricing</a
-          >
-          <a href="#faq" class="text-muted" style="text-decoration: none"
-            >FAQ</a
+          <a href="#" onclick="alert('Privacy link goes here.');return false;"
+            >Privacy</a
           >
         </div>
       </div>
     </footer>
 
-    <!-- MOBILE BOTTOM BAR -->
-    <nav aria-label="Mobile" class="bottom-bar">
-      <div class="container">
-        <div class="glass bottom-inner">
-          <a class="bottom-link" href="#hero">Home</a>
-          <a class="bottom-link" href="#inside">Inside</a>
-          <a class="bottom-link" href="#how">How</a>
-          <a class="bottom-link" href="#pricing">Buy</a>
-        </div>
-      </div>
-    </nav>
+    <a class="to-top cta" href="#top" aria-label="Back to top"
+      ><svg class="icon" aria-hidden="true"><use href="#i-rocket" /></svg>
+      Top</a
+    >
 
     <script>
-      // Current year in footer
-      document.getElementById("year").textContent = new Date().getFullYear();
+      "use strict";
+      (function () {
+        // Respect reduced motion
+        const prefersReduced = window.matchMedia(
+          "(prefers-reduced-motion: reduce)"
+        ).matches;
+
+        // Scroll reveal
+        const io = new IntersectionObserver(
+          (entries) => {
+            for (const e of entries) {
+              if (e.isIntersecting) {
+                e.target.classList.add("in-view");
+                io.unobserve(e.target);
+              }
+            }
+          },
+          { threshold: 0.08 }
+        );
+        document
+          .querySelectorAll(".reveal, section .feature, .shot, .stat")
+          .forEach((el) => io.observe(el));
+
+        // Counters
+        const nums = document.querySelectorAll("[data-count]");
+        const speed = 900; // ms total per counter
+        nums.forEach((el) => {
+          const target = Number(el.getAttribute("data-count")) || 0;
+          let start = null;
+          const step = (ts) => {
+            if (!start) start = ts;
+            const p = Math.min((ts - start) / speed, 1);
+            el.textContent = Math.round(target * p);
+            if (p < 1) requestAnimationFrame(step);
+          };
+          const obs = new IntersectionObserver(
+            (entries) => {
+              if (entries[0].isIntersecting) {
+                requestAnimationFrame(step);
+                obs.disconnect();
+              }
+            },
+            { threshold: 0.6 }
+          );
+          obs.observe(el);
+        });
+
+        // Back to top visibility
+        const toTop = document.querySelector(".to-top");
+        window.addEventListener("scroll", () => {
+          if (window.scrollY > 600) {
+            toTop.classList.add("show");
+          } else {
+            toTop.classList.remove("show");
+          }
+        });
+
+        // BG canvas particles
+        const canvas = document.getElementById("bgfx");
+        const ctx = canvas.getContext("2d");
+        let w,
+          h,
+          particles = [];
+        const COUNT = prefersReduced ? 0 : 90;
+        function resize() {
+          w = canvas.width = window.innerWidth * devicePixelRatio;
+          h = canvas.height = window.innerHeight * devicePixelRatio;
+          ctx.scale(devicePixelRatio, devicePixelRatio);
+        }
+        function rand(a, b) {
+          return Math.random() * (b - a) + a;
+        }
+        function reset(p) {
+          p.x = rand(0, window.innerWidth);
+          p.y = rand(0, window.innerHeight);
+          p.vx = rand(-0.3, 0.3);
+          p.vy = rand(0.2, 0.6);
+          p.sz = rand(0.5, 2.2);
+          p.alpha = rand(0.15, 0.45);
+        }
+        function init() {
+          particles = [];
+          for (let i = 0; i < COUNT; i++) {
+            const p = {};
+            reset(p);
+            particles.push(p);
+          }
+        }
+        function tick() {
+          if (COUNT === 0) return;
+          ctx.clearRect(0, 0, canvas.width, canvas.height);
+          ctx.save();
+          ctx.globalCompositeOperation = "lighter";
+          for (const p of particles) {
+            ctx.globalAlpha = p.alpha;
+            const g = ctx.createLinearGradient(p.x, p.y, p.x, p.y + 60);
+            g.addColorStop(0, "#4e76e4");
+            g.addColorStop(1, "#7fa0ff");
+            ctx.fillStyle = g;
+            ctx.beginPath();
+            ctx.arc(p.x, p.y, p.sz * 2, 0, Math.PI * 2);
+            ctx.fill();
+            p.x += p.vx;
+            p.y += p.vy;
+            if (
+              p.y > window.innerHeight + 20 ||
+              p.x < -20 ||
+              p.x > window.innerWidth + 20
+            )
+              reset(p);
+          }
+          ctx.restore();
+          requestAnimationFrame(tick);
+        }
+        resize();
+        init();
+        requestAnimationFrame(tick);
+        window.addEventListener("resize", () => {
+          resize();
+          init();
+        });
+
+        // Scrollspy for header links
+        const sections = [
+          "product",
+          "inside",
+          "benefits",
+          "results",
+          "showcase",
+          "pricing",
+          "faq",
+          "contact",
+        ];
+        const spy = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((e) => {
+              if (e.isIntersecting) {
+                document
+                  .querySelectorAll(".nav-links a")
+                  .forEach((a) => a.removeAttribute("aria-current"));
+                const link = document.querySelector(
+                  '.nav-links a[href="#' + e.target.id + '"]'
+                );
+                if (link) link.setAttribute("aria-current", "page");
+              }
+            });
+          },
+          { rootMargin: "-40% 0px -55% 0px" }
+        );
+        sections.forEach((id) => {
+          const el = document.getElementById(id);
+          if (el) spy.observe(el);
+        });
+      })();
+
+      // Contact form via mailto: (no backend required)
+      function openMail(e) {
+        e.preventDefault();
+        const fd = new FormData(e.target);
+        const name = encodeURIComponent(fd.get("name"));
+        const email = encodeURIComponent(fd.get("email"));
+        const msg = encodeURIComponent(fd.get("message"));
+        const subject = `Entreple Builder Pack inquiry – ${name}`;
+        const body = `From: ${name} (%3C${email}%3E)%0D%0A%0D%0A${msg}`;
+        window.location.href = `mailto:hello@entreple.app?subject=${subject}&body=${body}`;
+      }
+
+      (function () {
+        const toggle = document.querySelector(".menu-toggle");
+        const drawer = document.querySelector(".mobile-menu");
+        const closeBtn = document.querySelector(".menu-close");
+        if (!toggle || !drawer || !closeBtn) return;
+        const open = () => {
+          drawer.classList.add("open");
+          drawer.setAttribute("aria-hidden", "false");
+          toggle.setAttribute("aria-expanded", "true");
+        };
+        const close = () => {
+          drawer.classList.remove("open");
+          drawer.setAttribute("aria-hidden", "true");
+          toggle.setAttribute("aria-expanded", "false");
+        };
+        toggle.addEventListener("click", open);
+        closeBtn.addEventListener("click", close);
+        drawer.addEventListener("click", (e) => {
+          if (e.target === drawer) close();
+        });
+        document
+          .querySelectorAll(".mobile-links a")
+          .forEach((a) => a.addEventListener("click", close));
+      })();
+      // Smooth anchor scroll with sticky-header offset
+      (function () {
+        const header = document.querySelector("header");
+        document.querySelectorAll('a[href^="#"]').forEach((a) => {
+          a.addEventListener("click", (e) => {
+            const hash = a.getAttribute("href");
+            if (hash.length > 1) {
+              const target = document.querySelector(hash);
+              if (target) {
+                e.preventDefault();
+                const y =
+                  target.getBoundingClientRect().top +
+                  window.pageYOffset -
+                  (header ? header.offsetHeight : 0) -
+                  8;
+                window.scrollTo({ top: y, behavior: "smooth" });
+                const m = document.getElementById("mobileMenu");
+                if (m) m.classList.remove("open");
+              }
+            }
+          });
+        });
+      })();
     </script>
   </body>
 </html>
